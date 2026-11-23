@@ -26,6 +26,8 @@ export default function CheckoutScreen() {
 
   const [methodId, setMethodId] = useState(() => paymentMethods.find((m) => m.isDefault)?.id ?? paymentMethods[0]?.id);
   const [paying, setPaying] = useState(false);
+  // true once payment succeeded: the new booking itself must not show up as "you already have a booking"
+  const [paid, setPaid] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   if (!facility || !BUNDLES[bundle] || !hours) {
@@ -50,6 +52,7 @@ export default function CheckoutScreen() {
       setError(res.error);
       return;
     }
+    setPaid(true);
     if (router.canDismiss()) router.dismissAll();
     router.push({ pathname: "/booking/[id]", params: { id: res.booking.id, fresh: "1" } });
   };
@@ -84,7 +87,7 @@ export default function CheckoutScreen() {
           <Text style={type.tiny}>Healthy food & drinks are not included and can be bought on site.</Text>
         </Card>
 
-        {!stillAvailable ? (
+        {!stillAvailable && !paying && !paid ? (
           <Card style={{ marginTop: spacing.md, backgroundColor: colors.dangerLight }}>
             <Text style={{ color: colors.danger, fontWeight: "700" }}>
               {blocking ? blockingMessage(blocking) : "This is no longer available right now. Go back and choose another bundle."}
