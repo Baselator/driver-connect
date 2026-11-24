@@ -6,7 +6,7 @@ import type { BundleDefinition, BundleType } from "@/models/types";
  */
 export const PRICING = {
   currency: "EUR" as const,
-  overnight: { flat: 24.9 }, // parking up to 12 h + facility entry
+  overnight: { flat: 20.0 }, // parking up to 12 h + facility entry (matches the deck: €20 per night)
   shortTerm: { entryFee: 4.9, perHour: 3.5 }, // 1–4 h parking + facility entry
   entryOnly: { flat: 7.9 }, // 3 h facility access, no parking
 };

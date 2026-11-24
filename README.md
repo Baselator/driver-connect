@@ -1,6 +1,6 @@
 # DriverConnect (MVP)
 
-Truck parking reservations at compact rest facilities (10–20 spaces each) with showers, gym, lounge, kitchen and healthy food.
+Truck parking reservations at compact sites near motorway exits (10–20 spaces each, at Autohöfe) with showers, gym, lounge, kitchen and healthy food.
 
 React Native · Expo SDK 58 · TypeScript · Expo Router · react-native-maps · AsyncStorage
 

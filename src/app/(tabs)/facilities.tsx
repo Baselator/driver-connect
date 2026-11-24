@@ -53,7 +53,7 @@ export default function FacilitiesScreen() {
           <View>
             <ScreenTitle
               title="Facilities"
-              subtitle={`Compact rest stops · 10–20 truck spaces each${locationSource === "default" ? " · distances from Münster" : ""}`}
+              subtitle={`Compact sites near motorway exits · 10–20 truck spaces each${locationSource === "default" ? " · distances from Münster" : ""}`}
             />
             <View style={styles.search}>
               <Icon name="magnify" color={colors.textMuted} />

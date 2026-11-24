@@ -146,7 +146,7 @@ driver-connect/
 After every change press **`Ctrl+S`**. The app on your phone updates automatically. If it doesn't, press `r` in the terminal.
 
 ### Change a text on a screen
-1. Press `Ctrl+Shift+F` and search for the text, e.g. `compact rest facilities`.
+1. Press `Ctrl+Shift+F` and search for the text, e.g. `compact sites near motorway exits`.
 2. Click the result, edit the text between the quotes or tags, and save.
 
 ### Change colors
@@ -175,7 +175,7 @@ import { Logo, LogoMark } from "@/components/Logo";
 ### Change prices
 Open `src/config/pricing.ts`:
 ```ts
-overnight: { flat: 24.9 },
+overnight: { flat: 20.0 },
 shortTerm: { entryFee: 4.9, perHour: 3.5 },
 entryOnly: { flat: 7.9 },
 ```
@@ -184,7 +184,7 @@ The bundle titles and bullet points are in the same file (`BUNDLES`).
 ### Edit or add a facility
 Open `src/data/facilities.ts`. Copy one `{ … }` block, paste it, and change it:
 - `id`: unique, lowercase, no spaces (e.g. `"berlin"`)
-- `coordinate`: latitude/longitude. All 15 facilities sit at **real Autobahn rest areas** (Tank- und Rastanlagen) directly on the motorway, e.g. Münsterland (A1), Garbsen (A2), Königsforst (A3), Fürholzen (A9). To add one, find an existing rest area in Google Maps, right-click its car park and copy the coordinates. Put the rest area's name in `address` and the motorway in `motorway`.
+- `coordinate`: latitude/longitude. All 15 sites sit at **real Autohöfe next to motorway exits** (off the motorway, as in the business plan), e.g. Ladbergen (A1), Lehrte (A2), Kleinostheim (A3), Bergkirchen (A8). To add one, find an Autohof near an exit in Google Maps, right-click its truck car park and copy the coordinates. Put the Autohof's name in `address` and the motorway in `motorway`.
 - `totalSpaces`: **must be 10–20**. Anything outside is clamped automatically (rule in `services/facilityService.ts`).
 - `entryCapacity`: places inside the facility. **Must be larger than `totalSpaces`** (at least +4; the demo uses +6). This is also enforced automatically.
 - `baseWalkInVisitors`: demo "Facility Entry Only" visitors from other drivers.

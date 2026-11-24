@@ -206,7 +206,7 @@ export default function MapScreen() {
           <Card style={styles.hint}>
             <Icon name="truck-fast-outline" size={26} color={colors.orange} />
             <View style={{ flex: 1 }}>
-              <Text style={styles.hintTitle}>{facilities.length} compact rest facilities</Text>
+              <Text style={styles.hintTitle}>{facilities.length} compact sites near motorway exits</Text>
               <Text style={type.small}>Search a destination to find parking on your route, or tap a pin.</Text>
             </View>
           </Card>
